@@ -24,7 +24,6 @@ chmod +x ipsetting.sh
 Now, execute the shell script as sudo user:
 
 ```
-sudo ./ipsetting.sh
+sudo ./ipsetting.sh <hostname> <interface> <baseip> <ipaddress> <gateway/dns>
 ```
-
 
