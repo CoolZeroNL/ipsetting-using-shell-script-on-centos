@@ -28,7 +28,7 @@ echo "Changing the dns ..."
 echo ""
 
 sed -i.bk "s/nameserver.*/nameserver $3.$5/" /etc/resolv.conf
-echo "8.8.8.8" >> /etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
 
 echo "Adding $1 as hostname to the /etc/hosts file .."
