@@ -1,7 +1,7 @@
 IP Setting on CentOS7 using Shell Script
 ======================================
 
-This script will be help to setup ip and hostname on CentOS6
+This script will be help to setup ip and hostname on CentOS
 
 First create the script :
 
