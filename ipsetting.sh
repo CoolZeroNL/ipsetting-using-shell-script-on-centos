@@ -22,13 +22,15 @@ IPADDR=$3.$4
 NETMASK=255.255.255.0
 GATEWAY=$3.$5
 ONBOOT=yes
+DNS1=$3.$5
+DNS2=8.8.8.8
 EOF
 
-echo "Changing the dns ..."
-echo ""
+#echo "Changing the dns ..."
+#echo ""
 
-sed -i.bk "s/nameserver.*/nameserver $3.$5/" /etc/resolv.conf
-echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+#sed -i.bk "s/nameserver.*/nameserver $3.$5/" /etc/resolv.conf
+#echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
 
 echo "Adding $1 as hostname to the /etc/hosts file .."
@@ -42,6 +44,10 @@ echo "Restarting the Network Service, Please connect it using the new IP Address
 service network restart
 
 else
+
+echo ""
+ip a | grep BROADCAST
+echo ""
 
 echo "Usage: ip.sh <hostname> <interface> <baseip> <ipaddress> <gateway/dns>"
 echo "Example: ip.sh testname eth0 10.10.10 41 1"
